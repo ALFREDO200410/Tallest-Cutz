@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> TALLEST CUTZ| Barber Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+    }
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 15px;
+      background: #00ffcc;
+      color: #000;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00ccaa;
+    }
+    .price {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💈 Freddy Scott Barber</h1>
+  <p style="text-align:center;">Professional Home & House Barbing Service</p>
+
+  <div class="card">
+    <h2>Services & Prices</h2>
+    <p>✂️ Full Barbing — <span class="price">₦2,000</span></p>
+    <p>🎨 Barbing + Dye — <span class="price">₦3,500</span></p>
+    <p>✨ Line-up & Shaving — <span class="price">₦1,000</span></p>
+    <p>🎯 Line-up & Dye — <span class="price">₦1,500</span></p>
+    <p>📍 Home Service & House Shop Available</p>
+    <p>⏰ Every day: 8:00 AM – 6:30 PM</p>
+  </div>
+
+  <div class="card">
+    <h2>Book an Appointment</h2>
+
+    <label>Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label>Select Service</label>
+    <select id="service">
+      <option>Full Barbing - ₦2,000</option>
+      <option>Barbing + Dye - ₦3,500</option>
+      <option>Line-up & Shaving - ₦1,000</option>
+      <option>Line-up & Dye - ₦1,500</option>
+    </select>
+
+    <label>Service Type</label>
+    <select id="location">
+      <option>Home Service</option>
+      <option>House Shop</option>
+    </select>
+
+    <label>Date</label>
+    <input type="date" id="date">
+
+    <label>Time</label>
+    <input type="time" id="time">
+
+    <button onclick="book()">Book via WhatsApp</button>
+  </div>
+
+  <script>
+    function book() {
+      let name = document.getElementById("name").value;
+      let service = document.getElementById("service").value;
+      let location = document.getElementById("location").value;
+      let date = document.getElementById("date").value;
+      let time = document.getElementById("time").value;
+
+      let message =
+        "Hello Freddy Scott,%0A" +
+        "My name is " + name + ".%0A" +
+        "I want: " + service + ".%0A" +
+        "Service type: " + location + ".%0A" +
+        "Date: " + date + "%0A" +
+        "Time: " + time;
+
+      let phone = "2349014523320";
+      let url = "https://wa.me/" + phone + "?text=" + message;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
